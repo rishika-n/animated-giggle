@@ -5,7 +5,6 @@ function App() {
   const [option1, setOption1] = useState("");
   const [option2, setOption2] = useState("");
   const [responseText, setResponseText] = useState("");
-  //const responseData = ""
 
   const handleOption1Change = (event) => {
     setOption1(event.target.value);
@@ -16,9 +15,13 @@ function App() {
   };
 
   const handleSubmit = async () => {
+    const currentDate = new Date();
+    const todaydate = String(currentDate.getMonth()+1) +"/"+ String(currentDate.getDate()) +"/"+ String(currentDate.getFullYear())
+    console.log(todaydate)
     const requestBody = {
       zodiac: option1,
       category: option2,
+      date: todaydate,
     };
 
     try {
@@ -52,7 +55,7 @@ function App() {
       <div>
         <label htmlFor="option1">Select Your Zodiac: </label>
         <select id="option1" value={option1} onChange={handleOption1Change}>
-          <option value="aries">Aries</option>
+          <option value="aries" selected="selected">Aries</option>
           <option value="taurus">Taurus</option>
           <option value="gemini">Gemini</option>
           <option value="cancer">Cancer</option>
@@ -71,14 +74,14 @@ function App() {
         <select id="option2" value={option2} onChange={handleOption2Change}>
           <option value="general">General</option>
           <option value="career">Career</option>
-          <option value="love">Love</option>
-          <option value="friendship">Friendship</option>
+          <option value="romantic">Romantic</option>
+          <option value="social">Social</option>
           <option value="wellness">Wellness</option>
         </select>
       </div>
       <button onClick={handleSubmit}>Get Your Horoscope</button>
       <div className="response-container">
-        <p>{responseText}</p>
+        <p>{responseText.replace(/['"]+/g, '')}</p>
       </div> 
     </div>
     
