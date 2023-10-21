@@ -2,4 +2,4 @@ fastapi
 uvicorn
 openai
 apscheduler
-dotenv
+python-dotenv
