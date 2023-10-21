@@ -25,7 +25,7 @@ function App() {
     };
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/gethoroscope", {
+      const response = await fetch("https://horoscope-prediction-production.up.railway.app/gethoroscope", {
       
         method: "POST",
         headers: {
