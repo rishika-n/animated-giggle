@@ -52,8 +52,8 @@ function App() {
     <div className="App">
       <h1>Horoscope Generator</h1>
       <p>Today's Date: {new Date().toLocaleDateString()}</p>
-      <div>
-        <label htmlFor="option1">Select Your Zodiac: </label>
+      <div className="container">
+        <label htmlFor="option1">Zodiac Sign </label>
         <select id="option1" value={option1} onChange={handleOption1Change}>
           <option value="aries" selected="selected">Aries</option>
           <option value="taurus">Taurus</option>
@@ -69,8 +69,8 @@ function App() {
           <option value="pisces">Pisces</option>
         </select>
       </div>
-      <div>
-        <label htmlFor="option2">Category: </label>
+      <div className="container">
+        <label htmlFor="option2">Category </label>
         <select id="option2" value={option2} onChange={handleOption2Change}>
           <option value="general">General</option>
           <option value="career">Career</option>
@@ -79,9 +79,9 @@ function App() {
           <option value="wellness">Wellness</option>
         </select>
       </div>
-      <button onClick={handleSubmit}>Get Your Horoscope</button>
+      <button className="submit-button" onClick={handleSubmit}>Get Your Horoscope</button>
       <div className="response-container">
-        <p>{responseText.replace(/['"]+/g, '')}</p>
+        <p className="response-text">{responseText.replace(/['"]+/g, '')}</p>
       </div> 
     </div>
     
