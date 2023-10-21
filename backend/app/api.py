@@ -47,7 +47,7 @@ def populate_data():
     # Replace this with your data population logic
     for zodiac in zodiacs:
         for category in categories:
-            prompt = "Generate a horoscope that is less than 100 characters for " + zodiac + " for today in the "+ category +" category. Begin the horoscope by stating Hello " + zodiac +"! Today, your horoscope for " + category + " is: "
+            prompt = "Generate a horoscope that is less than 100 characters for " + zodiac + " for today in the "+ category +" category. Begin the horoscope by stating Hello " + zodiac +"! Today, your " + category + " horoscope is: "
             response = openai.Completion.create(
                 engine="text-davinci-003",  # You might need to adjust the engine according to available options
                 prompt=prompt,

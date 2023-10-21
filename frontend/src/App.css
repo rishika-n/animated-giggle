@@ -1,4 +1,9 @@
 /* App.css */
+body {
+  background-color: #c2d4f2; /* Replace 'your-color' with your desired background color */
+  margin: 0; /* Remove default margin for body */
+  padding: 0; /* Remove default padding for body */
+}
 .App {
   text-align: center;
   font-family: Arial, sans-serif;
@@ -12,10 +17,17 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.submit-button:hover {
+  background-color: #b5a4c4;
+  color: #501e7b;
 }
 
 .response-container {
-  background-color: white;
+  background-color: rgb(190, 163, 199);
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -23,11 +35,14 @@
 }
 
 .response-text {
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .date {
+  background-color: rgb(190, 163, 199);
   font-weight: bold;
+  font-size: 20px;
 }
 
 label {

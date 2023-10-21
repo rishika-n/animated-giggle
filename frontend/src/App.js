@@ -51,7 +51,7 @@ function App() {
   return (
     <div className="App">
       <h1>Horoscope Generator</h1>
-      <p>Today's Date: {new Date().toLocaleDateString()}</p>
+      <p className="date">Today's Date: {new Date().toLocaleDateString()}</p>
       <div className="container">
         <label htmlFor="option1">Zodiac Sign </label>
         <select id="option1" value={option1} onChange={handleOption1Change}>
