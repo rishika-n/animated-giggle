@@ -1,5 +1,6 @@
 import './App.css';
 import React, { useState } from "react";
+import { EmailShareButton, EmailIcon, FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon } from 'react-share';
 
 function App() {
   const [option1, setOption1] = useState("");
@@ -83,9 +84,34 @@ function App() {
       <div className="response-container">
         <p className="response-text">{responseText.replace(/['"]+/g, '')}</p>
       </div> 
+      <p className="date">Share Your Horoscope!</p>
+      <div className="container">
+      <FacebookShareButton
+        quote={responseText.replace(/['"]+/g, '')}
+        url={'https://loquacious-fairy-6f076a.netlify.app/'}
+        
+      >
+        <FacebookIcon size={50} round />
+      </FacebookShareButton>
+      <TwitterShareButton
+        title={responseText.replace(/['"]+/g, '')}
+        url={'https://loquacious-fairy-6f076a.netlify.app/'}
+>
+      <TwitterIcon size={50} round />
+      </TwitterShareButton>
+      <EmailShareButton
+        subject={"Check out my Horoscope!"}
+        body={responseText.replace(/['"]+/g, '')}
+        url={'https://loquacious-fairy-6f076a.netlify.app/'}
+>
+      <EmailIcon size={50} round />
+      </EmailShareButton>
     </div>
     
+    </div>
+ 
   );
 }
+
 
 export default App;
