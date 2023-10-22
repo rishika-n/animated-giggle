@@ -3,3 +3,5 @@ uvicorn
 openai
 apscheduler
 python-dotenv
+SQLAlchemy
+databases

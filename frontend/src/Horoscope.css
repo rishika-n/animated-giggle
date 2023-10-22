@@ -1,0 +1,61 @@
+/* App.css */
+body {
+  background-color: #c2d4f2; /* Replace 'your-color' with your desired background color */
+  margin: 0; /* Remove default margin for body */
+  padding: 0; /* Remove default padding for body */
+}
+.Horoscope {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #501e7b;
+  background-color: #c2d4f2;
+}
+
+.submit-button {
+  background-color: #501e7b;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.submit-button:hover {
+  background-color: #b5a4c4;
+  color: #501e7b;
+}
+
+.response-container {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.response-text {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.date {
+  font-size: 20px;
+}
+
+label {
+  font-weight: bold;
+  color: #501e7b;
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+select {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.container {
+  margin: 20px;
+}

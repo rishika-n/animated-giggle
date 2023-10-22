@@ -11,14 +11,9 @@ import asyncio
 import os
 from dotenv import load_dotenv
 
-logging.basicConfig(level=logging.INFO,  # Set your desired log level (INFO, DEBUG, ERROR, etc.)
-                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
-# Create a logger instance for your FastAPI app
 
 app = FastAPI()
-
-
 
 class HoroscopeData(BaseModel):
     zodiac: str
@@ -26,10 +21,11 @@ class HoroscopeData(BaseModel):
     date: str
 
 
-origins = [
-    "http://127.0.0.1:3000",
-    "127.0.0.1:3000"
-]
+# origins = [
+#     "http://127.0.0.1:3000",
+#     "127.0.0.1:3000"
+# ]
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -69,9 +65,6 @@ async def ensure_data_populated():
         await asyncio.sleep(1)
     return daily_horoscope
 
-@app.get("/zodiacs", tags=["zodiacs"])
-async def get_zodiacs() -> dict:
-    return { "data": zodiacs }
 
 @app.post("/gethoroscope")
 def process_options(item: HoroscopeData, data: dict = Depends(ensure_data_populated)):
@@ -82,11 +75,3 @@ def process_options(item: HoroscopeData, data: dict = Depends(ensure_data_popula
     }
     return(data[(processed_data["zodiac"], processed_data["category"])])
 
-
-
-
-
-
-
-# horoscope = response.choices[0].text.strip()
-# print(horoscope)
